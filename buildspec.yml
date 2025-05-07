@@ -12,6 +12,10 @@ phases:
       - echo Build started...
       - cp .env.example .env
       - php artisan key:generate
+      - mkdir -p storage/framework/views
+      - mkdir -p storage/framework/cache
+      - mkdir -p storage/logs
+      - chmod -R 775 storage bootstrap/cache
       - php artisan config:clear
       - php artisan config:cache
 
